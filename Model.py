@@ -2,141 +2,101 @@ import requests
 
 
 class Model:
-        def actualizar_Api(self):
-            self.resultado = None
 
-            try:
-                url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11000"  
-                response = requests.get(url)
+    APIUrl = "https://www.thecocktaildb.com/api/json/v1/1"
 
-                if response.status_code == 200:
-                    return response
+    def getFromAPI (self, url: str):
+            
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return response
                     
-
-                else:
-                    return None
-    
-            except requests.exceptions.RequestException as e:
+            else:
                 return None
-        
-        def searchById(self, id: int):
-
-            try:
-                url = f"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}"  
-                response = requests.get(url)
-
-                if response.status_code == 200:
-                    return response
-                    
-
-                else:
-                    return None
-    
-            except requests.exceptions.RequestException as e:
-                return None
+                
+        except requests.exceptions.RequestException as e:
+            return None    
 
 
-        def searchByName(self, name: str):
 
-            try:
-                url = f"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={name}"  
-                response = requests.get(url)
+    def searchById(self, id: int):
 
-                if response.status_code == 200:
-                    return response
-                    
+        url = f"{self.APIUrl}/lookup.php?i={id}"  
+        return self.getFromAPI(url)
 
-                else:
-                    return None
-    
-            except requests.exceptions.RequestException as e:
-                return None
+
+
+    def searchByName(self, name: str):
+
+        url = f"h{self.APIUrl}/search.php?s={name}"  
+        return self.getFromAPI(url)
             
 
 
-        def searchByFirstLetter(self, letter: chr):
+    def searchByFirstLetter(self, letter: chr):
         
-
-            try:
-                url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f={letter}"  
-                response = requests.get(url)
-
-                if response.status_code == 200:
-                    return response
-                    
-
-                else:
-                    return None
+        url = f"{self.APIUrl}/search.php?f={letter}"  
+        return self.getFromAPI(url)    
     
-            except requests.exceptions.RequestException as e:
-                return None    
 
-        def categoryFilter(self, isCocktail: bool):
-            resultado = None
 
-            try:
-                if(isCocktail):
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?c=Cocktail"  
-                    response = requests.get(url)
+    def categoryFilter(self, isCocktail: bool):
 
-                else:
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?c=Ordinary_Drink"
-                    response = requests.get(url)
+        if(isCocktail):
+            url = f"{self.APIUrl}/lookup.php?c=Cocktail"  
 
-                if response.status_code == 200:
-                    return response   
+        else:
+            url = f"{self.APIUrl}/lookup.php?c=Ordinary_Drink"
 
-                else:
-                    return None
+        return self.getFromAPI(url)
     
-            except requests.exceptions.RequestException as e:
-                print(f"Error de solicitud: { str(e)}")
-                return None 
-
-        def alcoholFilter(self, hasAlcohol: bool):
-            resultado = None
-
-            try:
-                if(hasAlcohol):
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?a=Alcoholic"  
-                    response = requests.get(url)
-
-                else:
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?a=Non_Alcoholic"
-                    response = requests.get(url)
 
 
-                if response.status_code == 200:
-                    return response                    
+    def alcoholFilter(self, hasAlcohol: bool):
 
-                else:
-                    print(f"Error en la solicitud: {response.status_code}")
-                    return None
+        if(hasAlcohol):
+            url = f"{self.APIUrl}/lookup.php?a=Alcoholic"  
+
+        else:
+            url = f"{self.APIUrl}/lookup.php?a=Non_Alcoholic"
+
+        return self.getFromAPI(url)    
+
+
+
+    def glassFilter(self, isCocktailGlass: bool):
+
+        if(isCocktailGlass):
+            url = f"{self.APIUrl}/lookup.php?g=Cocktail_Glass"  
+
+        else:    
+            url = f"{self.APIUrl}/lookup.php?g=Champagne_Flute"
+
+        return self.getFromAPI(url)
     
-            except requests.exceptions.RequestException as e:
-                print(f"Error de solicitud: { str(e)}")
-                return None    
+    
 
+    def getRandom(self):
+
+        url = f"{self.APIUrl}/random.php"
+        return self.getFromAPI(url);
+    
+
+
+    def searchIngByID(self, id: int):
+
+        url = f"{self.APIUrl}/lookup.php?iid={id}"
+        return self.getFromAPI(url);
+
+
+
+    def searchIngByName(self, name: str):
         
-        def glassFilter(isCocktailGlass):
-            resultado = None
+        url = f"{self.APIUrl}/search.php?i={name}"
+        return self.getFromAPI(url);
 
-            try:
-                if(isCocktailGlass):
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?g=Cocktail_Glass"  
-                    response = requests.get(url)
-
-                else:
-                    url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?g=Champagne_Flute"
-                    response = requests.get(url)
-
-                if response.status_code == 200:
-                    return response
-                    
-                else:
-                    return None
-    
-            except requests.exceptions.RequestException as e:
-                return None 
-ç
-                
+    def searchByIng(self, ingredient: str):
+        
+        url = f"{self.APIUrl}/filter.php?i={ingredient}"
+        return self.getFromAPI(url);
