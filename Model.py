@@ -82,7 +82,7 @@ class Model:
     @staticmethod
     def searchIngByID(id: int):
 
-        url = f"{Model.APIUrl}/lookup.php?iid={id}"
+        url = f"{Model.APIUrl}/lookup.php?id={id}"
         return Model.getFromAPI(url);
 
 
