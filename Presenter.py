@@ -1,88 +1,216 @@
-#import Model
-#import View
-import requests
+from Model import Model
 import json
 
-# Yo recibo las peticiones del View y llamo al Model para que me busque esas peticiones que luego le formateo y devuelvo al View
+# Funcion auxiliar que usamos para que no se repita tanto código que parsea el JSON
 
-def separar_json(url):
+def parseUrlDetalle(response):
+    results = []
+
+    json_data = json.loads(response)
+
+    json_data1 = json_data["drinks"][0]
+
+    #Esto recorre el json guardando los cocktails en una lista
+    for i in range(0,len(json_data["drinks"])):
+        json_data1 = json_data["drinks"][i]
+        results.append(json_data1)
+
+    #Devuelve el JSON como string
+    return results
+
+def parseUrlNoDetalle(response):
+    results = []
+
+    json_data = json.loads(response)
+
+    json_data1 = json_data["drinks"][0]
+
+    #Esto recorre el json guardando los cocktails en una lista
+    for i in range(0,len(json_data["drinks"])):
+            json_data1 = json_data["drinks"][i]
+            results.append(json_data1["strDrink"] + " " + json_data1["strDrinkThumb"])
+
+    #Devuelve el JSON como string
+    return results
+
+# FUNCIONES DE BUSCAR COCKTAILS
+# Funciones que usamos para buscar por Nombre
+
+def cocktailNoDetalleName(identificador):
     try:
-        # Obtener el JSON desde la URL
-        response = requests.get(url)
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchByName(identificador).text
+        results = parseUrlNoDetalle(response)
 
-        # Verificar si la solicitud fue exitosa
-        if response.status_code == 200:
-            # Analizar el JSON
-            data = response.json()
-            
-            # Convertir el JSON en una cadena JSON formateada
-            json_string = json.dumps(data, indent=4)
-            
-            # Separar la cadena en líneas
-            lineas = json_string.split('\n')
-
-            # Pasar las líneas como desees
-            for linea in lineas:
-                print(linea)
-        else:
-            print(f"Error: No se pudo obtener el JSON (Código de estado: {response.status_code})")
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
     except Exception as e:
         print(f"Error: {e}")
 
-
-def cocktail_no_detalle(url):
+def cocktailDetalleName(identificador):
     try:
-        results = []
-        # Analizar el JSON
-        response = requests.get(url)
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchByName(identificador).text
+        results = parseUrlDetalle(response)
 
-        if response.status_code == 200:
-            response = requests.get(url).text
-            # Obtener el contenido JSON de la respuesta 
-            json_data = json.loads(response)
-
-            json_data1 = json_data["drinks"][0]
-
-            for i in range(0,len(json_data["drinks"])):
-                json_data1 = json_data["drinks"][i]
-                results.append(json_data1["strDrink"] + " " + json_data1["strDrinkThumb"])
-            print(results)
-            return results
-            
-        else:
-            print(f"Error: No se pudo obtener el JSON (Código de estado: {response.status_code})")
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
     except Exception as e:
         print(f"Error: {e}")
 
+# Funciones que usamos para buscar por Id
 
-def cocktail_detalle(url):
+def cocktailNoDetalleId(identificador):
     try:
-        results = []
-        # Analizar el JSON
-        response = requests.get(url)
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchById(identificador).text
+        results = parseUrlNoDetalle(response)
 
-        if response.status_code == 200:
-            response = requests.get(url).text
-            # Obtener el contenido JSON de la respuesta 
-            json_data = json.loads(response)
-
-            json_data1 = json_data["drinks"][0]
-
-            #Esto recorre el json guardando los cocktails en una lista
-            for i in range(0,len(json_data["drinks"])):
-                json_data1 = json_data["drinks"][i]
-                results.append(json_data1)
-
-            #Esto imprime los resultados
-            print(results)
-
-            return results
-        else:
-            print(f"Error: No se pudo obtener el JSON (Código de estado: {response.status_code})")
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
     except Exception as e:
         print(f"Error: {e}")
 
-url="http://www.thecocktaildb.com/api/json/v1/1/search.php?s=lemon"  
+def cocktailDetalleId(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchById(identificador).text
+        results = parseUrlDetalle(response)
 
-#cocktail_detalle(url)
-cocktail_no_detalle(url)
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Funciones que usamos para buscar por primera letra
+
+def cocktailNoDetalleFirstLetter(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchByFirstLetter(identificador).text
+        results = parseUrlNoDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+def cocktailDetalleFirstLetter(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchByFirstLetter(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Funcion para buscar por ingrediente
+
+def cocktailByIngredient(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchByIng(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# FUNCIONES PARA BUSCAR INGREDIENTES
+
+def ingredientByName(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchIngByName(identificador).text
+        results = parseUrlNoDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+def ingredientById(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.searchIngByID(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# FUNCION PARA DAR UN RANDOM
+
+def randomCocktail():
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.getRandom().text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# FILTROS DE BÚSQUEDA
+# Filtro de alcohol
+
+def filterByAlcohol(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.alcoholFilter(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Filtro de categoría
+
+def filterByCategory(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.categoryFilter(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Filtro de Vaso
+
+def filterByGlass(identificador):
+    try:
+        # Recibo el JSON de la capa modelo y lo formateo
+        response = Model.glassFilter(identificador).text
+        results = parseUrlDetalle(response)
+
+        #Devolvemos la lista de JSON
+        #print(results)
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+# PRUEBAS DE CÓDIGO
+
+url ="Grass Skirt"
+
+print(cocktailDetalleName(url))
