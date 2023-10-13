@@ -39,12 +39,12 @@ class Model:
         
         url = f"{Model.APIUrl}/search.php?f={letter}"  
         return Model.getFromAPI(url)    
-    
+
 
     @staticmethod
     def categoryFilter(category: str):
 
-        url = f"{Model.APIUrl}/lookup.php?c={category}"  
+        url = f"{Model.APIUrl}/filter.php?c={category}"  
         return Model.getFromAPI(url)
     
 
@@ -52,10 +52,10 @@ class Model:
     def alcoholFilter(hasAlcohol: bool):
 
         if(hasAlcohol):
-            url = f"{Model.APIUrl}/lookup.php?a=Alcoholic"  
+            url = f"{Model.APIUrl}/filter.php?a=Alcoholic"  
 
         else:
-            url = f"{Model.APIUrl}/lookup.php?a=Non_Alcoholic"
+            url = f"{Model.APIUrl}/filter.php?a=Non_Alcoholic"
 
         return Model.getFromAPI(url)    
 
@@ -64,10 +64,10 @@ class Model:
     def glassFilter(isCocktailGlass: bool):
 
         if(isCocktailGlass):
-            url = f"{Model.APIUrl}/lookup.php?g=Cocktail_Glass"  
+            url = f"{Model.APIUrl}/filter.php?g=Cocktail_Glass"  
 
         else:    
-            url = f"{Model.APIUrl}/lookup.php?g=Champagne_Flute"
+            url = f"{Model.APIUrl}/filter.php?g=Champagne_Flute"
 
         return Model.getFromAPI(url)
     
