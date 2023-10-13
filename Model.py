@@ -5,7 +5,8 @@ class Model:
 
     APIUrl = "https://www.thecocktaildb.com/api/json/v1/1"
 
-    def getFromAPI (self, url: str):
+    @staticmethod
+    def getFromAPI (url: str):
             
         try:
             response = requests.get(url)
@@ -19,84 +20,85 @@ class Model:
             return None    
 
 
+    @staticmethod
+    def searchById(id: int):
 
-    def searchById(self, id: int):
-
-        url = f"{self.APIUrl}/lookup.php?i={id}"  
-        return self.getFromAPI(url)
+        url = f"{Model.APIUrl}/lookup.php?i={id}"  
+        return Model.getFromAPI(url)
 
 
+    @staticmethod
+    def searchByName(name: str):
 
-    def searchByName(self, name: str):
-
-        url = f"h{self.APIUrl}/search.php?s={name}"  
-        return self.getFromAPI(url)
+        url = f"h{Model.APIUrl}/search.php?s={name}"  
+        return Model.getFromAPI(url)
             
 
-
-    def searchByFirstLetter(self, letter: chr):
+    @staticmethod
+    def searchByFirstLetter(letter: chr):
         
-        url = f"{self.APIUrl}/search.php?f={letter}"  
-        return self.getFromAPI(url)    
+        url = f"{Model.APIUrl}/search.php?f={letter}"  
+        return Model.getFromAPI(url)    
     
 
-
-    def categoryFilter(self, isCocktail: bool):
+    @staticmethod
+    def categoryFilter(isCocktail: bool):
 
         if(isCocktail):
-            url = f"{self.APIUrl}/lookup.php?c=Cocktail"  
+            url = f"{Model.APIUrl}/lookup.php?c=Cocktail"  
 
         else:
-            url = f"{self.APIUrl}/lookup.php?c=Ordinary_Drink"
+            url = f"{Model.APIUrl}/lookup.php?c=Ordinary_Drink"
 
-        return self.getFromAPI(url)
+        return Model.getFromAPI(url)
     
 
-
-    def alcoholFilter(self, hasAlcohol: bool):
+    @staticmethod
+    def alcoholFilter(hasAlcohol: bool):
 
         if(hasAlcohol):
-            url = f"{self.APIUrl}/lookup.php?a=Alcoholic"  
+            url = f"{Model.APIUrl}/lookup.php?a=Alcoholic"  
 
         else:
-            url = f"{self.APIUrl}/lookup.php?a=Non_Alcoholic"
+            url = f"{Model.APIUrl}/lookup.php?a=Non_Alcoholic"
 
-        return self.getFromAPI(url)    
+        return Model.getFromAPI(url)    
 
 
-
-    def glassFilter(self, isCocktailGlass: bool):
+    @staticmethod
+    def glassFilter(isCocktailGlass: bool):
 
         if(isCocktailGlass):
-            url = f"{self.APIUrl}/lookup.php?g=Cocktail_Glass"  
+            url = f"{Model.APIUrl}/lookup.php?g=Cocktail_Glass"  
 
         else:    
-            url = f"{self.APIUrl}/lookup.php?g=Champagne_Flute"
+            url = f"{Model.APIUrl}/lookup.php?g=Champagne_Flute"
 
-        return self.getFromAPI(url)
+        return Model.getFromAPI(url)
     
     
+    @staticmethod
+    def getRandom():
 
-    def getRandom(self):
-
-        url = f"{self.APIUrl}/random.php"
-        return self.getFromAPI(url);
+        url = f"{Model.APIUrl}/random.php"
+        return Model.getFromAPI(url);
     
 
+    @staticmethod
+    def searchIngByID(id: int):
 
-    def searchIngByID(self, id: int):
-
-        url = f"{self.APIUrl}/lookup.php?iid={id}"
-        return self.getFromAPI(url);
+        url = f"{Model.APIUrl}/lookup.php?iid={id}"
+        return Model.getFromAPI(url);
 
 
-
-    def searchIngByName(self, name: str):
+    @staticmethod
+    def searchIngByName(name: str):
         
-        url = f"{self.APIUrl}/search.php?i={name}"
-        return self.getFromAPI(url);
+        url = f"{Model.APIUrl}/search.php?i={name}"
+        return Model.getFromAPI(url);
 
-    def searchByIng(self, ingredient: str):
+    @staticmethod
+    def searchByIng(ingredient: str):
         
-        url = f"{self.APIUrl}/filter.php?i={ingredient}"
-        return self.getFromAPI(url);
+        url = f"{Model.APIUrl}/filter.php?i={ingredient}"
+        return Model.getFromAPI(url);
