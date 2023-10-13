@@ -58,20 +58,8 @@ class Model:
             url = f"{Model.APIUrl}/filter.php?a=Non_Alcoholic"
 
         return Model.getFromAPI(url)    
-
-
-    @staticmethod
-    def glassFilter(isCocktailGlass: bool):
-
-        if(isCocktailGlass):
-            url = f"{Model.APIUrl}/filter.php?g=Cocktail_Glass"  
-
-        else:    
-            url = f"{Model.APIUrl}/filter.php?g=Champagne_Flute"
-
-        return Model.getFromAPI(url)
     
-    
+        
     @staticmethod
     def getRandom():
 
