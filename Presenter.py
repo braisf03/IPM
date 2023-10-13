@@ -33,6 +33,23 @@ def parseUrlNoDetalle(response):
     #Devuelve el JSON como string
     return results
 
+# Funcion para los ingredientes
+
+def parseUrlIng(response):
+        results = []
+
+        json_data = json.loads(response)
+
+        json_data1 = json_data["ingredients"][0]
+
+        #Esto recorre el json guardando los cocktails en una lista
+        for i in range(0,len(json_data["ingredients"])):
+            json_data1 = json_data["ingredients"][i]
+            results.append(json_data1)
+
+        #Devuelve el JSON como string
+        return results
+
 # FUNCIONES DE BUSCAR COCKTAILS
 # Funciones que usamos para buscar por Nombre
 
@@ -116,12 +133,11 @@ def cocktailDetalleFirstLetter(identificador):
 
 def cocktailByIngredient(identificador):
     try:
-        # Recibo el JSON de la capa modelo y lo formateo
+        
         response = Model.searchByIng(identificador).text
         results = parseUrlDetalle(response)
-
-        #Devolvemos la lista de JSON
-        #print(results)
+        
+        #Devuelve el JSON como string
         return results
     except Exception as e:
         print(f"Error: {e}")
@@ -132,10 +148,8 @@ def ingredientByName(identificador):
     try:
         # Recibo el JSON de la capa modelo y lo formateo
         response = Model.searchIngByName(identificador).text
-        results = parseUrlNoDetalle(response)
-
-        #Devolvemos la lista de JSON
-        #print(results)
+        results = parseUrlIng(response)
+        
         return results
     except Exception as e:
         print(f"Error: {e}")
@@ -144,10 +158,8 @@ def ingredientById(identificador):
     try:
         # Recibo el JSON de la capa modelo y lo formateo
         response = Model.searchIngByID(identificador).text
-        results = parseUrlDetalle(response)
-
-        #Devolvemos la lista de JSON
-        #print(results)
+        results = parseUrlIng(response)
+        #Devuelve el JSON como string
         return results
     except Exception as e:
         print(f"Error: {e}")
@@ -208,8 +220,3 @@ def filterByGlass(identificador):
         return results
     except Exception as e:
         print(f"Error: {e}")
-
-# PRUEBAS DE CÓDIGO
-
-#url ="Grass Skirt"
-#print(cocktailDetalleName(url))
