@@ -30,7 +30,7 @@ class Model:
     @staticmethod
     def searchByName(name: str):
 
-        url = f"h{Model.APIUrl}/search.php?s={name}"  
+        url = f"{Model.APIUrl}/search.php?s={name}"  
         return Model.getFromAPI(url)
             
 
@@ -42,14 +42,9 @@ class Model:
     
 
     @staticmethod
-    def categoryFilter(isCocktail: bool):
+    def categoryFilter(category: str):
 
-        if(isCocktail):
-            url = f"{Model.APIUrl}/lookup.php?c=Cocktail"  
-
-        else:
-            url = f"{Model.APIUrl}/lookup.php?c=Ordinary_Drink"
-
+        url = f"{Model.APIUrl}/lookup.php?c={category}"  
         return Model.getFromAPI(url)
     
 
