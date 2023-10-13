@@ -211,6 +211,5 @@ def filterByGlass(identificador):
 
 # PRUEBAS DE CÓDIGO
 
-url ="Grass Skirt"
-
-print(cocktailDetalleName(url))
+#url ="Grass Skirt"
+#print(cocktailDetalleName(url))
