@@ -15,6 +15,7 @@ classDiagram
 }
 
     class Presenter{
+    -_alcoholFilter -> bool
     +parseUrlDetalle(response)
     +parseUrlNoDetalle(response)
     +parseUrlIng(response)
