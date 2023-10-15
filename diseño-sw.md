@@ -6,43 +6,40 @@
 
 ```mermaid
 classDiagram
-    Main <--> View
-    View <--> Presenter
+    Presenter <--> View
     Presenter <--> Model
-
-    class Main
-    Main: -view -> View
-    Main: +__main__()
-
-    class View
-    View : -Gtk objects
-    View : +destroy()
-    View : +update_view()
-    View : +reset_view()
-    View : +connect_buscar_clicked(handler)
-    View : +connect_interval_changed(handler)
-    View : +connect_ascdes_changed(handler)
-    View : +connect_delete_event(handler)
-    View : +show_all()
-    View : +hide()
-
-    class Presenter
-    Presenter : -view -> View
-    Presenter : -results -> View Results
-    Presenter : -model -> Model
-    Presenter : -selected_interval -> int
-    Presenter : -selected_asc -> bool
-    Presenter : +on_interval_changed()
-    Presenter : +on_ascdes_changed()
-    Presenter : +on_buscar_clicked()
-    Presenter : +on_view_delete_event()
-    Presenter : +on_volver_clicked()
-
-    class Model
-    Model : +getFromAPI()
-    Model : +searchById()
-
-
+    Presenter : -APIUrl -> string
+    Presenter : +_getFromAPI(url -> string)
+    Presenter : +searchById(id -> int)
+    Presenter : +searchByName(name -> string)
+    Presenter : +categoryFilter(category -> string)
+    Presenter : 
+    class View{
+      struct __gsignals__
+      __init__(self, **kw)
+      run(self)
+      quit(cls, widget)
+      show_home(self)
+      hide_home(self)
+      display_command(self, result)
+      show_search(self)
+      hide_search(self)
+      connect_search_clicked(self, fun)
+      connect_home_clicked(self, fun)
+}
+    class Model{
+     -APIUrl -> string
+     +_getFromAPI(url -> string)
+     +searchById(id -> int)
+     +searchByName(name -> string)
+     +categoryFilter(category -> string)
+     +alcoholFilter(hasAlcohol -> bool)
+     +getRandom()
+     +searchIngById(id -> int)
+     +searchIngByName(name -> string)
+     +searchByIng(ingredient -> string)
+    
+}
 ```
 
 ## Diagramas dinámicos
