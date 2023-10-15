@@ -30,17 +30,24 @@ classDiagram
     
 }
     class View{
-      struct __gsignals__
-      __init__(self, **kw)
-      run(self)
-      quit(cls, widget)
-      show_home(self)
-      hide_home(self)
-      display_command(self, result)
-      show_search(self)
-      hide_search(self)
-      connect_search_clicked(self, fun)
-      connect_home_clicked(self, fun)
+    -CocktailDesktop.glade -> glade
+    +__init__(self)
+    +run(self)
+    +adminSignals(self, handler)
+    +buttonGoCocktails(self, widget)
+    +buttonGoIngredients(self, widget)
+    +buttonGoHome(self, widget)
+    +buttonGoHome(self, widget)
+    +buttonClickedCocktail(self, widget, nombre)
+    +buttonRandomCocktail(self, widget)
+    +generateRandomCocktails(self)
+    +getbuttonsSCocktail(self, widget)
+    +BusquedaCocktail(self, entry)
+    +buttonClickedIngredient(self, widget, nombre)
+    +BusquedaIngredients(self, entry)
+    +generateRandomIngridients(self)
+    +getbuttonsSIngridients(self, widget)
+    +mostrar_imagen_desde_url(url, ancho, alto)
 }
     class Model{
      -APIUrl -> string
