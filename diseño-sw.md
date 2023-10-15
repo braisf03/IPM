@@ -73,7 +73,7 @@ classDiagram
 ### Diagrama de clases
 ```mermaid
 sequenceDiagram
-    main->>+View: 1: connect_buscar_clicked()
+    main->>+View: 1: Gtk.main()
     View->>+Presenter: 2: on_connect_clicked()
     Presenter->>+Model: 3: get_example()
     Model-->>-Presenter: 4: return
