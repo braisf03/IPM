@@ -70,19 +70,43 @@ classDiagram
 ```
 
 ## Diagramas dinámicos
-### Diagrama de clases
+### Búsqueda Cocktail
 ```mermaid
 sequenceDiagram
     main->>+View: 1: Gtk.main()
-    View->>+Presenter: 2: on_connect_clicked()
-    Presenter->>+Model: 3: get_example()
-    Model-->>-Presenter: 4: return
-    Presenter->>+Model: 5: get_cocktail()
-    Model->>+Server: 6: GET\cocktail
-    Server-->>-Model: 7: data:json
-    Model-->>-Presenter: 8: return
-    Presenter->>+View Results: 9: results.show()
-    Presenter-->>-View: 10: return
-    View-->>-main: 11: return
-```    
+    View->>+Presenter: 2: BúsquedaCocktail()
+    loop GetCocktail
+    Presenter->>+Model: 3: get_cocktail()
+    Model->>+Model: 4: searchByName()
+    Model-->>-Presenter: 5: data:json
+    end
+    Presenter-->>-View: 6: return listaCocktails
+    View-->>-main: 7: exit
+```
+### Búsqueda Ingredientes
 
+```mermaid
+sequenceDiagram
+    main->>+View: 1: Gtk.main()
+    View->>+Presenter: 2: BúsquedaIngredients()
+    loop GetIngredients
+    Presenter->>+Model: 3: get_cocktail()
+    Model->>+Model: 4: searchIngByName()
+    Model-->>-Presenter: 5: data:json
+    end
+    Presenter-->>-View: 6: return listaIngredients
+    View-->>-main: 7: exit
+```    
+### Cocktail Random
+```mermaid
+sequenceDiagram
+    main->>+View: 1: Gtk.main()
+    View->>+Presenter: 2: GenerateRandomCocktails()
+    loop GetIngredients
+    Presenter->>+Model: 3: get_cocktail()
+    Model->>+Model: 4: RandomCocktail()
+    Model-->>-Presenter: 5: data:json
+    end
+    Presenter-->>-View: 6: return listaCocktails
+    View-->>-main: 7: exit
+```    
