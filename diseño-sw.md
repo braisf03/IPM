@@ -103,7 +103,7 @@ sequenceDiagram
 sequenceDiagram
     main->>+View: 1: Gtk.main()
     View->>+Presenter: 2: GenerateRandomCocktails()
-    loop GetIngredients
+    loop GetCocktail
     Presenter->>+Model: 3: get_cocktail()
     Model->>+Model: 4: RandomCocktail()
     Model-->>-Presenter: 5: data:json
