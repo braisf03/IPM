@@ -8,12 +8,27 @@
 classDiagram
     Presenter <--> View
     Presenter <--> Model
-    Presenter : -APIUrl -> string
-    Presenter : +_getFromAPI(url -> string)
-    Presenter : +searchById(id -> int)
-    Presenter : +searchByName(name -> string)
-    Presenter : +categoryFilter(category -> string)
-    Presenter : 
+
+    class Presenter{
+    +parseUrlDetalle(response)
+    +parseUrlNoDetalle(response)
+    +parseUrlIng(response)
+    +parseUrlIngNoDetalle(response)
+    +cocktailNoDetalleName(identificador)
+    +cocktailDetalleName(identificador)
+    +cocktailNoDetalleId(identificador)
+    +cocktailDetalleId(identificador)
+    +cocktailByIngredient(identificador)
+    +ingredientByName(identificador)
+    +ingredientsByName(identificador)
+    +ingredientById(identificador)
+    +randomCocktail()
+    +filterByAlcohol(identificador)
+    +filterByCategory(identificador)
+    +filterByGlass(identificador)
+    +random4Cocktail()
+    
+}
     class View{
       struct __gsignals__
       __init__(self, **kw)
