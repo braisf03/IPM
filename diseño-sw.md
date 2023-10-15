@@ -6,8 +6,13 @@
 
 ```mermaid
 classDiagram
+    Main --> View
     Presenter <--> View
     Presenter <--> Model
+
+    class Main{
+    +__init__()
+}
 
     class Presenter{
     +parseUrlDetalle(response)
