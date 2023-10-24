@@ -1,113 +1,60 @@
-# Diseño software
-
-
-## Diagrama estático
-### Diagrama de clases
-
-```mermaid
-classDiagram
-    Main --> View
-    Presenter <--> View
-    Presenter <--> Model
-
-    class Main{
-    +__init__()
-}
-
-    class Presenter{
-    -_alcoholFilter -> bool
-    +parseUrlDetalle(response)
-    +parseUrlNoDetalle(response)
-    +parseUrlIng(response)
-    +parseUrlIngNoDetalle(response)
-    +cocktailNoDetalleName(identificador)
-    +cocktailDetalleName(identificador)
-    +cocktailNoDetalleId(identificador)
-    +cocktailDetalleId(identificador)
-    +cocktailByIngredient(identificador)
-    +ingredientByName(identificador)
-    +ingredientsByName(identificador)
-    +ingredientById(identificador)
-    +randomCocktail()
-    +filterByAlcohol(identificador)
-    +filterByCategory(identificador)
-    +filterByGlass(identificador)
-    +random4Cocktail()
-    
-}
-    class View{
-    -CocktailDesktop.glade -> glade
-    +__init__(self)
-    +run(self)
-    +adminSignals(self, handler)
-    +buttonGoCocktails(self, widget)
-    +buttonGoIngredients(self, widget)
-    +buttonGoHome(self, widget)
-    +buttonGoHome(self, widget)
-    +buttonClickedCocktail(self, widget, nombre)
-    +buttonRandomCocktail(self, widget)
-    +generateRandomCocktails(self)
-    +getbuttonsSCocktail(self, widget)
-    +BusquedaCocktail(self, entry)
-    +buttonClickedIngredient(self, widget, nombre)
-    +BusquedaIngredients(self, entry)
-    +generateRandomIngridients(self)
-    +getbuttonsSIngridients(self, widget)
-    +mostrar_imagen_desde_url(url, ancho, alto)
-}
-    class Model{
-     -APIUrl -> string
-     +_getFromAPI(url -> string)
-     +searchById(id -> int)
-     +searchByName(name -> string)
-     +categoryFilter(category -> string)
-     +alcoholFilter(hasAlcohol -> bool)
-     +getRandom()
-     +searchIngById(id -> int)
-     +searchIngByName(name -> string)
-     +searchByIng(ingredient -> string)
-    
-}
-```
-
-## Diagramas dinámicos
-### Búsqueda Cocktail
 ```mermaid
 sequenceDiagram
-    main->>+View: 1: Gtk.main()
-    View->>+Presenter: 2: BúsquedaCocktail()
-    loop GetCocktail
-    Presenter->>+Model: 3: get_cocktail()
-    Model->>+Model: 4: searchByName()
-    Model-->>-Presenter: 5: data:json
-    end
-    Presenter-->>-View: 6: return listaCocktails
-    View-->>-main: 7: exit
-```
-### Búsqueda Ingredientes
+    participant Main as Main
+    participant Model as Model
+    participant View as View
+    participant MiAplicacion as MiAplicacion
 
-```mermaid
-sequenceDiagram
-    main->>+View: 1: Gtk.main()
-    View->>+Presenter: 2: BúsquedaIngredients()
-    loop GetIngredients
-    Presenter->>+Model: 3: get_cocktail()
-    Model->>+Model: 4: searchIngByName()
-    Model-->>-Presenter: 5: data:json
-    end
-    Presenter-->>-View: 6: return listaIngredients
-    View-->>-main: 7: exit
-```    
-### Cocktail Random
-```mermaid
-sequenceDiagram
-    main->>+View: 1: Gtk.main()
-    View->>+Presenter: 2: GenerateRandomCocktails()
-    loop GetCocktail
-    Presenter->>+Model: 3: get_cocktail()
-    Model->>+Model: 4: RandomCocktail()
-    Model-->>-Presenter: 5: data:json
-    end
-    Presenter-->>-View: 6: return listaCocktails
-    View-->>-main: 7: exit
+    Main->>Model: Llama al constructor de Presenter
+    Main->>MiAplicacion: Llama al constructor de MiAplicacion
+    Main->>View: Establece el manejador
+
+    activate Main
+
+    Main->>View: Ejecuta la vista
+    Main->>MiAplicacion: Ejecuta la vista
+    View->>MiAplicacion: Muestra la vista
+
+    activate View
+
+    View-->>Main: Espera eventos del usuario
+    View->>Presenter: Llama a on_cocktail_screen_clicked
+    activate Presenter
+    Presenter->>Model: Llama a random4Cocktail
+    Model->>Model: Realiza múltiples solicitudes a la API
+    Model->>Model: Selecciona 4 cócteles aleatorios
+    Model-->>Presenter: Devuelve nombres e imágenes de cócteles
+    Presenter-->>View: Muestra nombres e imágenes de cócteles
+    deactivate Presenter
+    View-->>Main: Muestra nombres e imágenes de cócteles aleatorios
+
+    View->>Presenter: Llama a on_ingredient_screen_clicked
+    activate Presenter
+    Presenter->>Model: Llama a random4Ingredients
+    Model->>Model: Realiza múltiples solicitudes a la API
+    Model->>Model: Selecciona 4 ingredientes aleatorios
+    Model-->>Presenter: Devuelve nombres e imágenes de ingredientes
+    Presenter-->>View: Muestra nombres e imágenes de ingredientes
+    deactivate Presenter
+    View-->>Main: Muestra nombres e imágenes de ingredientes aleatorios
+
+    View->>Presenter: Llama a on_cocktail_clicked
+    activate Presenter
+    Presenter->>Model: Llama a cocktailDetalleName
+    Model->>Model: Realiza una solicitud a la API
+    Model-->>Presenter: Devuelve detalles del cóctel
+    Presenter-->>View: Muestra detalles del cóctel
+    deactivate Presenter
+
+    View->>Presenter: Llama a on_ingredient_clicked
+    activate Presenter
+    Presenter->>Model: Llama a ingredientByName
+    Model->>Model: Realiza una solicitud a la API
+    Model-->>Presenter: Devuelve detalles del ingrediente
+    Presenter-->>View: Muestra detalles del ingrediente
+    deactivate Presenter
+
+    View-->>Main: Espera más eventos del usuario
+    deactivate View
+    deactivate Main
 ```    
