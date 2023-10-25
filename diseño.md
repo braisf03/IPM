@@ -12,7 +12,7 @@ sequenceDiagram
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
     MiAplicacion->>Presenter: Llama a on_cocktail_screen_clicked
-    Presenter->>Model: Llama a cocktailDetalleName
+    Presenter->>Model: Llama a cocktailDetalleName [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished and cocktail found
@@ -28,8 +28,7 @@ sequenceDiagram
             Model-->>Presenter: Devuelve el codigo de error
             Presenter-->>MiAplicacion: Muestra el error
     option Network Timeout
-            Model-->>Server: Acces error
-            Server-->>Model: Error code
+            Model-->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
             Presenter-->>MiAplicacion: Muestra el error
     end
