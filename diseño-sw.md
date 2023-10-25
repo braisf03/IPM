@@ -4,6 +4,7 @@ sequenceDiagram
     participant Presenter as Presenter
     participant Model as Model
     participant MiAplicacion as MiAplicacion
+    participant Server as Server
 
     Main->>Presenter: Llama al constructor de Presenter
     activate Main
@@ -18,8 +19,8 @@ sequenceDiagram
         MiAplicacion->>Presenter: Llama a on_cocktail_screen_clicked
         activate Presenter
         Presenter->>Model: Llama a random4Cocktail
-        Model->>Model: Realiza múltiples solicitudes a la API
-        Model->>Model: Selecciona 4 cócteles aleatorios
+        Model->>Server: Realiza múltiples solicitudes a la API
+        Server->>Server: Selecciona 4 cócteles aleatorios
         Model-->>Presenter: Devuelve nombres e imágenes de cócteles
         Presenter-->>MiAplicacion: Muestra nombres e imágenes de cócteles
     end
