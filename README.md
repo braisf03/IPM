@@ -6,19 +6,19 @@ Prácticas Intefaces Persona Máquina (curso 2023/24)
 
 ### Práctica Desktop: *NaN* ###
 
-+**Tarea 1 (Implementación) :** *10'00/16'00*
++**Tarea 1 (Diseño software e implementación) :** *10'00/16'00*
 
-+**Tarea 2 (Concurrencia) :** *15'00/16'00*
++**Tarea 2 (Gestión de la concurrencia y la E/S en IGUs) :** *15'00/16'00*
 
 +**Tarea 3 (Internacionalización) :** *NaN*
 
 ### Práctica Mobile: *NaN* ###
 
-+**Tarea 4 (???) :** *NaN*
++**Tarea 4 (Diseño de la interfaz) :** *NaN*
 
-+**Tarea 5 (???) :** *NaN*
++**Tarea 5 (Implementación de la aplicación) :** *NaN*
 
-+**Tarea 6 (???) :** *NaN*
++**Tarea 6 (Test end2end) :** *NaN*
 
 ### Práctica Web: *NaN* ###
 
