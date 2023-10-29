@@ -1,0 +1,21 @@
+Analista semana 1-3: Antón Soto Ríos
+
+Documento IPM Analista:
+ - Semana 1: Revisé la documentación de GTK 3, me informé sobre que arquitectura usar y empecé el modelo mientras mis compañeros trabajaban en otras asignaturas,
+	     fue una semana en la que no se hizo nada destacable, solo me documenté para saber como organizar el trabajo en la semana siguiente donde estabamos todos libres.
+	     Además, mi compañero Brais y yo creamos un esquema sobre los casos de uso que había que abordar para saber cuantas funcionalidades debiamos cubrir y implementamos en
+	     Mermeid un boceto del diagrama de clases y el diagrama dinámico.
+	     
+ - Semana 2: Repartí las tareas del grupo y cada uno hizo su parte, en concreto; Guillén el modelo, Brais el presenter y yo la vista. Tuvimos varios contratiempos debido a que
+ 	     decidimos rehacer la implementación de la vista en GTK 4 y más adelante, la volvimos a deshacer para implementarla en una interfaz gráfica que usa GTK 3. Esto retrasó
+ 	     la vista y el presenter, haciendo que el modelo acabara antes, esto provocó que Guillén acabase el presenter y Brais empezara con la creación de los diagramas solicitados.
+ 	     
+ - Semana 3: En esta semana, implementamos la concurrencia y pantallas de error en el programa. En mi caso, al haberme encargado de la vista en la anterior entrega,
+ 	     realicé las pantallas de error y me encargué de implementar los cambios necesarios en la vista para que funcionase con la concurrencia. En el caso de mis compañeros,
+ 	     hicieron cambios en la clase "Presenter" y "Modelo" para que la aplicación fuese concurrente y hicieron los cambios oportunos en el Mermeid para que fuese acorde al programa.
+ 	     
+  - Semana 4: Para la última semana de esta práctica, realizamos corrección de errores y implementamos la internacionalización en la que trabajamos todos de manera conjunta, Guillén se
+  	      de los cambios en la clase "Presenter" para obtener la descripción traducida mientras que Brais y yo tradujimos el texto estático que hay en pantalla a través de la libreía
+  	      "locale" y "gettext".
+ 	     
+

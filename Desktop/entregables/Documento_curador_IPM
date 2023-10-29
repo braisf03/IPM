@@ -1,0 +1,66 @@
+Objetivos de aprendizaje de la practica (semana 1):
+
+-Aprender a usar python a un nivel básico para implementar la lógica interna de la aplicación, especial énfasis en tipos de datos como el diccionario y la lista
+-Aprender sobre las librerías json y requests para el acceso a la API que se nos ha dado
+-Aprender a utilizar la librería GTK para realizar la interfaz gráfica
+-Aprender a usar la herramienta "Glade" para ayudarnos con la creación de la interfaz gráfica
+
+
+
+Recursos usados (semana 1):
+
+-Documentación de GTK3 (https://docs.gtk.org/gtk3/). En este enlace se encuentra toda la información necesaria sobre las clases y métodos de GTK3.
+Estos conocimientos también nos ayudan en Glade, ya que usa las mismas clases que GTK3. Para ver toda la información sobre una clase y sus métodos,
+se busca esa clase en el apartado "Clases" y se clica en ella. Esto nos lleva  una página con toda la información necesaria sobre la clase: cómo definirla,
+sus métodos...
+
+
+-Documentación de python (https://docs.python.org/3.11/search.html). En este enlace se puede buscar sobre cualquiera de las clases o librerías de python.
+Esto es especialmente útil para los tipos de datos predefinidos, como las listas, las tuplas y los diccionarios, o para librerías como json o requests.
+Para buscar, se puede introducir algo en la barra de búsqueda, por ejemplo "tuple". Entre las búsquedas posibles, se selecciona el tipo de dato apropiado y
+se clica en él, mostrando la mayoría de información. 
+
+
+
+
+Objetivos de aprendizaje (semana 2):
+
+-Aprender a gestionar errores e implementar las pantallas correspondientes
+-Aprender a utilizar threads en Python y su uso en las interfaces gráficas
+-Mejorar nuestro entendimiento sobre el patrón MVP, ya que nuestra implementación es más similar a un MVC
+
+
+
+Recursos usados (semana 2):
+
+-Documentación de python (https://docs.python.org/3.11/search.html). En este enlace se puede buscar sobre cualquiera de las clases o librerías de python.
+Durante esta semana, le dimos uso para aprender sobre la librería threading: Inicialización de un thread, funciones relacionadas con él...
+
+
+-Documentación de GTK3 (https://docs.gtk.org/gtk3/). En este enlace se encuentra toda la información necesaria sobre las clases y métodos de GTK3.
+En este caso, la usamos especialmente para aprender sobre las funciones de los spinners y así implementarlos en las pantallas de carga.
+
+
+-Información sobre threading en GTK (https://pygobject.readthedocs.io/en/latest/guide/threading.html)
+Aquí aprendimos sobre la función Glib_idle_add, que se usa para hacer algo en el thread principal
+
+
+
+
+Objetivos de aprendizaje (semana 3):
+
+-Aprender a usar los módulos locale y gettext para facilitaar la traducción de la interfaz al idioma predefinido del usuario
+-Aprender sobre mermaid de forma más completa para perfeccionar nuestra documentación 
+
+
+
+Recursos usados (semana 3):
+
+-Documentación de python (https://docs.python.org/3.11/search.html). En este enlace se puede obtener información sobre las clases, métodos y librerías de python.
+Durante esta semana, la usamos para aprender sobre el módulo locale, que ayuda al programador con la internacionalización de sus aplicaciones.
+Además de eso, investigamos sobre el módulo gettext, que ayuda con la tarea de traducir todo el texto de manera más sencilla.
+
+
+-Documentación de Mermaid (https://mermaid.js.org/intro/). En este enlace se puede obtener información general sobre cómo hacer varios tipos de
+diagramas en Mermaid. A la izquierda de la página hay enlaces a cualquiera de los diagramas, donde se puede obtener información más completa sobre ellos.
+En nuestro caso, dedicamos la mayor parte de nuestra investigación a los diagramas de secuencia, aunque también nos informamos sobre los de clase.

@@ -1,0 +1,44 @@
+ANÁLISIS TAREA 1 PRÁCTICA 1
+
+Antón Soto --> 5/5
+Lo puntúo con la puntuación máxima porque trabajo toda la semana para entender la documentación de GTK 3,
+la cuál fue complicada de entender, y fue capaz de usar la aplicación glade para ayudar a la implementación 
+gráfica del programa, sobre todo en la capa vista, que fue la que realizó él.
+
+Guillén Porto --> 5/5
+Se le asignó que hiciera la capa modelo, y la hizo en tiempo récord de manera muy eficiente y sin errores. 
+Tuvo algunas complicaciones por lo que acabo haciendo los métodos del modelo estáticos pero lo solventó 
+con una resolución excelente. Además ayudo en la implementación de la capa presentador.
+
+Brais Sánchez --> 5/5
+En este caso me asignaron la capa presentador y la hice de manera efectiva y rápida, siendo fácil de llamar
+desde la capa vista con funciones muy concisas. Además realicé la implementación de nuestas clases en el 
+lenguaje de mermaid ( tanto los diagramas estáticos, como los dinámicos).
+
+ANÁLISIS TAREA 2 PRÁCTICA 1
+
+Antón Soto --> 4/5
+Desempeñó bien su trabajo e hizo los cambios necesario y oportunos para poder implementar
+la concurrencia de la interfaz de usuario y modificó el glade en consecuencia.
+
+Guillén Porto --> 5/5
+Trabajó una gran cantidad de tiempo para implementar la concurrencia en la aplicación de
+manera progresiva, cambiando y haciendo todo lo necesario para que funcionase bien.
+
+Brais Sánchez --> 4/5
+Ayudo a hacer la concurrencia en menos medida e hizo los cambios que fueron necesarios en
+los diagramas mermaid.
+
+ANÁLISIS TAREA 3 PRÁCTICA 1
+
+Antón Soto --> 5/5
+Realizó traducciones para la internacionalización, ayudó en la implementación del código y realizo todas
+las pruebas necesarias para comprobar que funcionase bien la internacionalización.
+
+Guillén Porto --> 5/5
+Corregió los errores que tenímos en la anterior entrega e hizo el código para hacer que las descripciones
+dinámicas de los cócteles se colocaran de manera correcta en la interfaz.
+
+Brais Sánchez --> 4/5
+Realizó traducciones de los idiomas para la internacionalización, tarbajó en la implementación
+y añadió los cambios que se pedían en los diagramas mermaid.

@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-24 17:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: View.py:163 View.py:180 View.py:183 View.py:191 View.py:206 View.py:219
+msgid "Cocktails"
+msgstr "Cocktail"
+
+#: View.py:164 View.py:168 View.py:185 View.py:189 View.py:235 View.py:258
+#: View.py:285 View.py:310
+msgid "Ingredients"
+msgstr "Zutaten"
+
+#: View.py:167 View.py:179 View.py:184 View.py:190 View.py:207 View.py:220
+#: View.py:234 View.py:257 View.py:284 View.py:309
+msgid "Home"
+msgstr "Beginn"
+
+#: View.py:169 View.py:236 View.py:260 View.py:268 View.py:286 View.py:312
+#: View.py:320
+msgid "Search Cocktail"
+msgstr "Cocktails suchen"
+
+#: View.py:170 View.py:262 View.py:316
+msgid "Recomended cocktails"
+msgstr "Empfohlene Cocktails"
+
+#: View.py:171 View.py:259 View.py:311
+msgid "Filters"
+msgstr "Filter"
+
+#: View.py:172 View.py:261 View.py:313
+msgid "Alcohol"
+msgstr "Alkohol"
+
+#: View.py:173 View.py:263 View.py:314
+msgid "Alcoholic"
+msgstr "Alkoholiker"
+
+#: View.py:174 View.py:264 View.py:315
+msgid "Non Alcoholic"
+msgstr "Alkoholfrei"
+
+#: View.py:175 View.py:267
+msgid "Filter by ingredient"
+msgstr "Nach Inhaltsstoffen filtern"
+
+#: View.py:176 View.py:181
+msgid "Search Ingredient"
+msgstr "Nachschlagen"
+
+#: View.py:177 View.py:269 View.py:321
+msgid "Search a random cocktail"
+msgstr "Suchen Sie einen random Cocktail"
+
+#: View.py:178 View.py:270 View.py:322
+msgid "Let's try new things"
+msgstr "Lass uns neue Dinge ausprobieren"
+
+#: View.py:182 View.py:237 View.py:287
+msgid "Recomended Ingredients"
+msgstr "Empfohlene Zutaten"
+
+#: View.py:186
+msgid "Cocktail look"
+msgstr "Blick auf den Cocktail"
+
+#: View.py:187
+msgid "Instructions"
+msgstr "Anweisungen"
+
+#: View.py:188
+msgid "Ingredients to make it"
+msgstr "Anleitung dazu"
+
+#: View.py:192
+msgid "Ingredient look"
+msgstr "Blick auf die Zutat"
+
+#: View.py:193
+msgid "Alcoholic:"
+msgstr "Alkoholgehalt:"
+
+#: View.py:194
+msgid "Description"
+msgstr "Beschreibung"
+
+#: View.py:195
+msgid "Cocktails which include it"
+msgstr "Cocktails, die es enthalten"
+
+#: View.py:208 View.py:221
+msgid "Ingredient"
+msgstr "Zutat"
+
+#: View.py:209 View.py:222 View.py:238 View.py:265
+msgid "Error:No acces to the database"
+msgstr "Fehler: Kein Zugriff auf die Datenbank"
+
+#: View.py:210 View.py:223 View.py:239 View.py:266 View.py:289 View.py:318
+msgid "Reload"
+msgstr "Aufladen"
+
+#: View.py:288
+msgid "Error:No ingredients were found"
+msgstr "Fehler: Keine Zutaten gefunden"
+
+#: View.py:317
+msgid "Error:No cocktail was found"
+msgstr "Fehler:Es wurde kein Cocktail gefunden"
+
+#: View.py:319
+msgid "Filter By Ingredient"
+msgstr "Filtern nach Inhaltsstoff"
+
+#: View.py:381 View.py:387
+msgid "Fetching cocktail info"
+msgstr "Holen Sie sich Cocktail Info"
+
+#: View.py:432 View.py:440
+msgid "Searching cocktails"
+msgstr "Cocktails suchen"
+
+#: View.py:465
+msgid "Fetching ingredient info"
+msgstr "Abrufen von Zutateninformationen"
+
+#: View.py:471
+msgid "Searching ingredients"
+msgstr "Zutaten suchen"
+
+#: View.py:478
+msgid "Recommended cocktails"
+msgstr "Empfohlene Cocktails"
+
+#: View.py:560
+msgid "(Measure:"
+msgstr "(Messen:"
+
+#: View.py:575
+msgid "Alcohol:"
+msgstr "Alkohol:"
+
+#: View.py:579
+msgid "How much ->"
+msgstr "Wie viel ->"
+
+#: Presenter.py:47
+msgid "strInstructions"
+msgstr "strInstructionsDE"
+
+#: Presenter.py:79
+msgid "No description"
+msgstr "Keine beschreibung"
