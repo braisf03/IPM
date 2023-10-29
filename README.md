@@ -1,6 +1,6 @@
 # Interfaces Persona Máquina
 
-Prácticas Intefaces Persona Máquina (curso 2023/24)
+Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 ## Calificaciones
 
