@@ -4,13 +4,13 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 ## Calificaciones
 
-### Práctica Desktop: *NaN* ###
+### Práctica Desktop: *40'00/48'00* ###
 
 +**Tarea 1 (Diseño software e implementación) :** *10'00/16'00*
 
 +**Tarea 2 (Gestión de la concurrencia y la E/S en IGUs) :** *15'00/16'00*
 
-+**Tarea 3 (Internacionalización) :** *NaN*
++**Tarea 3 (Internacionalización) :** *15'00/16'00*
 
 ### Práctica Mobile: *NaN* ###
 
