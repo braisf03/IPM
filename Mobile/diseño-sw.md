@@ -6,13 +6,13 @@ classDiagram
 
 App --> Home
 Home -- Error
-Home -- Favoritos
-Error -- Favoritos
-Error -- Divisas
+Home -- CambioMultiple
+Error -- CambioMultiple
+Error -- CambioSimple
 
-Favoritos -- Model
-Divisas -- Model
-Home -- Divisas
+CambioMultiple -- Model
+CambioSimple -- Model
+Home -- CambioSimple
 
 class App {
 +build(): widget
@@ -26,13 +26,13 @@ class Error {
 +build(): widget
 }
 
-class Divisas {
+class CambioSimple {
 -exchanges: List Map
 +build(): widget
 +convert(): void
 }
 
-class Favoritos {
+class CambioMultiple {
 -currency: List
 +build(): widget
 +convert(): void
