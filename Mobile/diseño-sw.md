@@ -58,15 +58,13 @@ sequenceDiagram
 
     participant App as App
     participant Home as Home
-    participant Divisas as Divisas
+    participant CambioSimple as CambioSimple
     participant Model as Model
 
     activate App
     
     App ->>+ Home: build()
-    Home ->>+ Divisas: build()
-    Divisas ->>+ Model: getExchange()
-    Model -->>- Divisas: return json
-    Divisas -->>- Home: Muestra por pantalla el cambio hecho
-
-```
+    Home ->>+ CambioSimple: build()
+    CambioSimple ->>+ Model: getExchange()
+    Model -->>- CambioSimple: return json
+    CambioSimple -->>- Home: Muestra por pantalla el cambio hecho
