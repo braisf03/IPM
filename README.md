@@ -14,7 +14,7 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 ### Práctica Mobile: *NaN* ###
 
-+**Tarea 4 (Diseño de la interfaz) :** *NaN*
++**Tarea 4 (Diseño de la interfaz) :** *8'00/16'00*
 
 +**Tarea 5 (Implementación de la aplicación) :** *NaN*
 
