@@ -68,3 +68,33 @@ sequenceDiagram
     CambioSimple ->>+ Model: getExchange()
     Model -->>- CambioSimple: return json
     CambioSimple -->>- Home: Muestra por pantalla el cambio hecho
+
+
+```
+
+
+### Añadir moneda
+```mermaid
+sequenceDiagram
+
+    participant App as App
+    participant Home as Home
+    participant Provider as Provider
+    participant SelectedCurrencies as SelectedCurrencies
+
+
+    activate App
+
+    App ->>+ Home: buttonPressed()
+    Home ->> Provider: addCurrency()
+    Provider ->>SelectedCurrencies: addCurrency()
+    SelectedCurrencies ->>Provider: notify()
+    Provider ->> Home: setState()
+    Home->>Home: build()
+    Home ->> Provider: getCurrencies()
+    Provider ->> SelectedCurrencies: getCurrencies()
+    SelectedCurrencies -->> Provider: return currencies
+    Provider -->> Home: return currencies
+    Home ->>App: Muestra por pantalla la página actualizada
+
+```
