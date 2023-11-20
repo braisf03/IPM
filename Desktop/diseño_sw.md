@@ -222,9 +222,10 @@ sequenceDiagram
         loop 4 times
             Presenter->>Model: Llama a getRandom()
             Model->>Server:  Realiza la solicitud a la API
-            Server->>Server: Consigue el ingrediente
-            Server-->>Model: Devuelve el ingrediente
-            Model-->>Presenter: Devuelve la información del ingrediente
+            Server->>Server: Consigue el cóctel
+            Server-->>Model: Devuelve el cóctel
+            Model-->>Presenter: Devuelve la información del cóctel
+            Presenter ->> Presenter : Toma un el nombre y la imagen de un ingrediente aleatorio del cóctel
         end
         Presenter->>MiAplicacion: Llama a displayIngredients() [Thread principal]
     option Network Timeout
