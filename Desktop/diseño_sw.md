@@ -110,7 +110,7 @@ sequenceDiagram
         Server->>Server: Consigue el cóctel
         Server-->>Model: Devuelve el cóctel
         Model-->>Presenter: Devuelve descripción entera del cóctel
-        Presenter->>MiAplicacion: Llama a showCocktailInfo() [Thread principal]
+        Presenter->>MiAplicacion: Llama a displayCocktailInfo() [Thread principal]
     option Network Timeout
             Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
