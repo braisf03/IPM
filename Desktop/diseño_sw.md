@@ -145,14 +145,14 @@ sequenceDiagram
 
 #-------------Accesos a la base de datos------------#
     critical Connection to the database stablished
-        Presenter ->> Model : Llama a searchByName()
+        Presenter ->> Model : Llama a searchIngByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Consigue el ingrediente
         Server-->>Model: Devuelve el ingrediente
         Model-->>Presenter: Devuelve descripción entera del ingrediente
         Presenter->>MiAplicacion: Llama a displayIngredientInfo() [Thread principal]
     option Network Timeout
-            Presenter ->> Model : Llama a searchByName()
+            Presenter ->> Model : Llama a searchIngByName()
             Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
             Presenter->>MiAplicacion: Llama a ingredientFetchError() [Thread principal]
@@ -182,14 +182,14 @@ sequenceDiagram
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished
-        Presenter->>Model: Llama a searchByName
+        Presenter->>Model: Llama a searchByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Selecciona los cócteles
         Server-->>Model: Devuelve los 4 cócteles
         Model-->>Presenter: Devuelve nombres e imágenes de los cócteles
         Presenter->>MiAplicacion: Llama a displayCocktails()
     option Network Timeout
-            Presenter->>Model: Llama a searchByName   
+            Presenter->>Model: Llama a searchByName()
             Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
             Presenter->>MiAplicacion: Llama a cocktailSearchError()
