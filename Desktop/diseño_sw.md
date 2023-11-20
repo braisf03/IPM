@@ -277,7 +277,7 @@ sequenceDiagram
     end
 ```
 
-### Buscar Cócteles
+### Buscar Cócteles ✅
 ```mermaid
 sequenceDiagram
 #--------------Definiciones de actores--------------#
@@ -291,24 +291,26 @@ sequenceDiagram
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
     MiAplicacion->>Presenter: Llama a on_cocktail_searched() 
-    Presenter->>Model: Llama a BusquedaCocktail() [Llamada concurrente]
+    Presenter->>Model: Llama a cocktailNoDetalleName() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished and cocktail found
-        Model->>Server: Realiza la solicitud a la API
-        Server->>Server: Selecciona los cócteles
-        Server-->>Model: Devuelve 4 cócteles
-        Model-->>Presenter: Devuelve nombres e imágenes de los cócteles
-        Presenter-->>MiAplicacion: Muestra nombres e imágenes de los cócteles
+     loop 4 times
+            Model->>Server:  Realiza la solicitud a la API
+            Server->>Server: Selecciona el cóctel
+            Server-->>Model: Devuelve el cóctel
+            Model-->>Presenter: Devuelve la información del cóctel
+        end
+        Presenter->>MiAplicacion: Llama a displayCocktails()
     option Connection to the database stablished and cocktail not found
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: No se encuentran los cócteles
-        Server-->>Model: Devuelve error not found
-        Model-->>Presenter: Devuelve error not found
-        Presenter-->>MiAplicacion: Muestra error mot found
+        Server-->>Model: Devuelve cocktailSearchError()
+        Model-->>Presenter: Devuelve cocktailSearchError()
+        Presenter->>MiAplicacion: Muestra error 
     option Network Timeout   
-        Model-->>Model: Error code
-        Model-->>Presenter: Devuelve el codigo de error
-        Presenter-->>MiAplicacion: Muestra el error
+        Model->>Model: Error code
+        Model-->>Presenter: Devuelve cocktailDBError()
+        Presenter->>MiAplicacion: Muestra el error
     end
 ```
