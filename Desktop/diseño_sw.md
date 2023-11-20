@@ -1,6 +1,6 @@
-# Diseño software
-## Diagrama estático
-### Diagrama de clases
+# Diseño software✅✅✅
+## Diagrama estático✅✅
+### Diagrama de clases✅✅
 
 ```mermaid
 classDiagram
@@ -85,8 +85,8 @@ classDiagram
 }
 ```
 
-## Diagramas dinámicos
-### Diagrama de secuencia
+## Diagramas dinámicos✅✅✅✅✅✅✅
+### Diagrama de secuencia✅✅✅✅✅✅
 ### Cóctel Detalle ✅
 ```mermaid
 sequenceDiagram
@@ -240,7 +240,7 @@ sequenceDiagram
 
 ```
 
-### Buscar Ingredientes
+### Buscar Ingredientes✅
 
 ```mermaid
 sequenceDiagram
@@ -255,26 +255,30 @@ sequenceDiagram
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
     MiAplicacion->>Presenter: Llama a on_ingredient_searched() 
-    Presenter->>Model: Llama a BusquedaIngredient() [Llamada concurrente]
+    Presenter->>Model: Llama a ingredientsByName() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished and ingredient found
+        Presenter ->> Model: Llama a searchIngByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Selecciona los ingredientes
         Server-->>Model: Devuelve 4 ingredientes
         Model-->>Presenter: Devuelve nombres e imágenes de los ingredientes
-        Presenter-->>MiAplicacion: Muestra nombres e imágenes de los ingredientes
+        Presenter->>MiAplicacion: Llama a displayIngredients [Thread principal]
     option Connection to the database stablished and ingredient not found
+        Presenter ->> Model: Llama a searchIngByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: No se encuentran los ingredientes
         Server-->>Model: Devuelve error not found
         Model-->>Presenter: Devuelve error not found
-        Presenter-->>MiAplicacion: Muestra error mot found
+        Presenter->>MiAplicacion: Llama a ingredientSearchError [Thread principal]
     option Network Timeout   
-        Model-->>Model: Error code
+        Presenter ->> Model: Llama a searchIngByName()
+        Model->>Model: Error code
         Model-->>Presenter: Devuelve el codigo de error
-        Presenter-->>MiAplicacion: Muestra el error
+        Presenter->>MiAplicacion: Llama a ingredientDBError [ Thread principal]
     end
+    MiAplicacion->>MiAplicacion: Actualiza la vista
 ```
 
 ### Buscar Cócteles ✅
@@ -291,26 +295,28 @@ sequenceDiagram
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
     MiAplicacion->>Presenter: Llama a on_cocktail_searched() 
-    Presenter->>Model: Llama a cocktailNoDetalleName() [Llamada concurrente]
+    Presenter->>Presenter: Llama a cocktailNoDetalleName() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished and cocktail found
-     loop 4 times
-            Model->>Server:  Realiza la solicitud a la API
-            Server->>Server: Selecciona el cóctel
-            Server-->>Model: Devuelve el cóctel
-            Model-->>Presenter: Devuelve la información del cóctel
-        end
-        Presenter->>MiAplicacion: Llama a displayCocktails()
+        Presenter ->> Model: Llama a searchByName()
+        Model->>Server:  Realiza la solicitud a la API
+        Server->>Server: Selecciona los cócteles
+        Server-->>Model: Devuelve los cócteles
+        Model-->>Presenter: Devuelve los nombres y fotos de los cócteles
+        Presenter->>MiAplicacion: Llama a displayCocktails() [Thread principal]
     option Connection to the database stablished and cocktail not found
+        Presenter ->> Model: Llama a searchByName()
         Model->>Server: Realiza la solicitud a la API
-        Server->>Server: No se encuentran los cócteles
+        Server->>Server: No se encuentran los cócteles 
         Server-->>Model: Devuelve cocktailSearchError()
         Model-->>Presenter: Devuelve cocktailSearchError()
-        Presenter->>MiAplicacion: Muestra error 
-    option Network Timeout   
+        Presenter->>MiAplicacion: Llama a cocktailSearchError() [Thread principal]
+    option Network Timeout
+        Presenter ->> Model: Llama a searchByName()
         Model->>Model: Error code
         Model-->>Presenter: Devuelve cocktailDBError()
-        Presenter->>MiAplicacion: Muestra el error
+        Presenter->>MiAplicacion: Llama a cocktailDBError() [Thread principal]
     end
+    MiAplicacion->>MiAplicacion: Actualiza la vista
 ```
