@@ -112,7 +112,7 @@ sequenceDiagram
         Model-->>Presenter: Devuelve descripción entera del cóctel
         Presenter->>MiAplicacion: Llama a showCocktailInfo() [Thread principal]
     option Network Timeout
-            Model-->>Model: Error code
+            Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
             Presenter->>MiAplicacion: Llama a cocktailFetchError() [Thread principal]
     end
