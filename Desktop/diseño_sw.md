@@ -200,7 +200,7 @@ sequenceDiagram
 
     deactivate Presenter
 ```
-### Mostrar pantalla ingredientes
+### Mostrar pantalla ingredientes ✅
 ```mermaid
 sequenceDiagram
 
@@ -214,22 +214,27 @@ sequenceDiagram
     Presenter->>MiAplicacion: Llama al constructor de MiAplicacion
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
-    MiAplicacion->>Presenter: Llama a random4Ingredients() 
-    Presenter->>Model: Llama a show_ingredients() [Llamada concurrente]
+    MiAplicacion->>Presenter: Llama a on_ingredient_screen_clicked()
+    Presenter->>Presenter: Llama a random4ingredients() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished
-        Model->>Server: Realiza la solicitud a la API
-        Server->>Server: Selecciona los ingredientes
-        Server-->>Model: Devuelve los 4 ingredientes
-        Model-->>Presenter: Devuelve nombres e imágenes de los ingredientes
-        Presenter-->>MiAplicacion: Muestra nombres e imágenes de los ingredientes
-    option Network Timeout   
-            Model-->>Model: Error code
-            Model-->>Presenter: Devuelve el codigo de error
-            Presenter-->>MiAplicacion: Muestra el error
+        loop 4 times
+            Presenter->>Model: Llama a getRandom()
+            Model->>Server:  Realiza la solicitud a la API
+            Server->>Server: Consigue el ingrediente
+            Server-->>Model: Devuelve el ingrediente
+            Model-->>Presenter: Devuelve la información del ingrediente
+        end
+        Presenter->>MiAplicacion: Llama a displayIngredients() [Thread principal]
+    option Network Timeout
+            Presenter->>Model: Llama a getRandom()
+            Model->>Model: Error code
+            Model-->>Presenter: Devuelve el código de error
+            Presenter->>MiAplicacion: Llama a ingredientDBError() [Thread principal]
     end
-   
+   MiAplicacion->>MiAplicacion: Actualiza la vista
+
     deactivate Presenter
 
 ```
