@@ -163,7 +163,7 @@ sequenceDiagram
 
 ```
 
-### Mostrar pantalla cócteles
+### Mostrar pantalla cócteles✅
 ```mermaid
 sequenceDiagram
 
@@ -177,24 +177,26 @@ sequenceDiagram
     Presenter->>MiAplicacion: Llama al constructor de MiAplicacion
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
-    MiAplicacion->>Presenter: Llama a show_cocktails()
-    Presenter->>Model: Llama a random4Cocktail() [Llamada concurrente]
+    MiAplicacion->>Presenter: Llama a on_cocktail_searched
+    Presenter->>Presenter: Llama a cocktailNoDetalleName() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished
+        Presenter->>Model: Llama a searchByName
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Selecciona los cócteles
         Server-->>Model: Devuelve los 4 cócteles
         Model-->>Presenter: Devuelve nombres e imágenes de los cócteles
-        Presenter-->>MiAplicacion: Muestra nombres e imágenes de los cócteles
-    option Network Timeout   
-            Model-->>Model: Error code
+        Presenter->>MiAplicacion: Llama a displayCocktails()
+    option Network Timeout
+            Presenter->>Model: Llama a searchByName   
+            Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
-            Presenter-->>MiAplicacion: Muestra el error
+            Presenter->>MiAplicacion: Llama a cocktailSearchError()
     end
-   
-    deactivate Presenter
+   MiAplicacion->>MiAplicacion: Actualiza la vista
 
+    deactivate Presenter
 ```
 ### Mostrar pantalla ingredientes
 ```mermaid
