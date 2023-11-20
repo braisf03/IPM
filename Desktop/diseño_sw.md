@@ -4,13 +4,10 @@
 
 ```mermaid
 classDiagram
-    Main --> Presenter
-    Presenter <--> View
     
-
-    class Main{
-    +__name__()
-}
+    Presenter --> Model
+    Presenter *-- View
+    View ..> Presenter
 
     class Presenter{
     +__init__(self, view: MiAplicacion)
