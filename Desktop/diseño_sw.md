@@ -102,16 +102,18 @@ sequenceDiagram
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
     MiAplicacion->>Presenter: Llama a on_cocktail_clicked()
-    Presenter->>Model: Llama a cocktailDetalleName() [Llamada concurrente]
+    Presenter->>Presenter: Llama a cocktailDetalleName() [Llamada concurrente]
 
-#-------------Accesos a la base de datos------------#        
+#-------------Accesos a la base de datos------------#
     critical Connection to the database stablished
+        Presenter ->> Model : Llama a searchByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Consigue el cóctel
         Server-->>Model: Devuelve el cóctel
         Model-->>Presenter: Devuelve descripción entera del cóctel
         Presenter->>MiAplicacion: Llama a displayCocktailInfo() [Thread principal]
     option Network Timeout
+            Presenter ->> Model : Llama a searchByName()
             Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
             Presenter->>MiAplicacion: Llama a cocktailFetchError() [Thread principal]
