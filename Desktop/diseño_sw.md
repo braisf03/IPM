@@ -177,22 +177,24 @@ sequenceDiagram
     Presenter->>MiAplicacion: Llama al constructor de MiAplicacion
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
-    MiAplicacion->>Presenter: Llama a on_cocktail_searched
-    Presenter->>Presenter: Llama a cocktailNoDetalleName() [Llamada concurrente]
+    MiAplicacion->>Presenter: Llama a on_cocktail_screen_clicked()
+    Presenter->>Presenter: Llama a random4cocktail() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
     critical Connection to the database stablished
-        Presenter->>Model: Llama a searchByName()
-        Model->>Server: Realiza la solicitud a la API
-        Server->>Server: Selecciona los cócteles
-        Server-->>Model: Devuelve los 4 cócteles
-        Model-->>Presenter: Devuelve nombres e imágenes de los cócteles
-        Presenter->>MiAplicacion: Llama a displayCocktails()
+        loop 4 times
+            Presenter->>Model: Llama a getRandom()
+            Model->>Server:  Realiza la solicitud a la API
+            Server->>Server: Consigue el cóctel
+            Server-->>Model: Devuelve el coctel
+            Model-->>Presenter: Devuelve información del cóctel
+        end
+        Presenter->>MiAplicacion: Llama a displayCocktails() [Thread principal]
     option Network Timeout
-            Presenter->>Model: Llama a searchByName()
+            Presenter->>Model: Llama a getRandom()
             Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
-            Presenter->>MiAplicacion: Llama a cocktailSearchError()
+            Presenter->>MiAplicacion: Llama a cocktailDBError() [Thread principal]
     end
    MiAplicacion->>MiAplicacion: Actualiza la vista
 
