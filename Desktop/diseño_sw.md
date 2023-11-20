@@ -101,7 +101,7 @@ sequenceDiagram
     Presenter->>MiAplicacion: Llama al constructor de MiAplicacion
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
-    MiAplicacion->>Presenter: Llama a on_cocktail_screen_clicked()
+    MiAplicacion->>Presenter: Llama a on_cocktail_clicked()
     Presenter->>Model: Llama a cocktailDetalleName() [Llamada concurrente]
 
 #-------------Accesos a la base de datos------------#        
