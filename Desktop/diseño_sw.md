@@ -87,7 +87,7 @@ classDiagram
 
 ## Diagramas dinámicos
 ### Diagrama de secuencia
-### Cóctel Detalle
+### Cóctel Detalle ✅
 ```mermaid
 sequenceDiagram
 
