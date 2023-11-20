@@ -126,7 +126,7 @@ sequenceDiagram
 
 
 
-### Ingrediente Detalle
+### Ingrediente Detalle ✅
 ```mermaid
 sequenceDiagram
 
@@ -140,22 +140,25 @@ sequenceDiagram
     Presenter->>MiAplicacion: Llama al constructor de MiAplicacion
     activate Presenter
     MiAplicacion->>MiAplicacion: Muestra la vista
-    MiAplicacion->>Presenter: Llama a on_ingredient_screen_clicked()
-    Presenter->>Model: Llama a ingredientByName() [Llamada concurrente]
+    MiAplicacion->>Presenter: Llama a on_ingredient_clicked()
+    Presenter->>Presenter: Llama a ingredientByName() [Llamada concurrente]
 
-#-------------Accesos a la base de datos------------#        
+#-------------Accesos a la base de datos------------#
     critical Connection to the database stablished
+        Presenter ->> Model : Llama a searchByName()
         Model->>Server: Realiza la solicitud a la API
         Server->>Server: Consigue el ingrediente
         Server-->>Model: Devuelve el ingrediente
         Model-->>Presenter: Devuelve descripción entera del ingrediente
-        Presenter-->>MiAplicacion: Muestra descripción entera del ingrediente
+        Presenter->>MiAplicacion: Llama a displayIngredientInfo() [Thread principal]
     option Network Timeout
-            Model-->>Model: Error code
+            Presenter ->> Model : Llama a searchByName()
+            Model->>Model: Error code
             Model-->>Presenter: Devuelve el codigo de error
-            Presenter-->>MiAplicacion: Muestra el error
+            Presenter->>MiAplicacion: Llama a ingredientFetchError() [Thread principal]
     end
    
+    MiAplicacion->> MiAplicacion : Se actualiza la vista
     deactivate Presenter
 
 ```
