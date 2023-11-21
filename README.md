@@ -16,7 +16,7 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 +**Tarea 4 (Diseño de la interfaz) :** *8'00/16'00*
 
-+**Tarea 5 (Implementación de la aplicación) :** *NaN*
++**Tarea 5 (Implementación de la aplicación) :** *14'00/16'00*
 
 +**Tarea 6 (Test end2end) :** *NaN*
 
