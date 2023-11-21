@@ -4,7 +4,7 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 ## Calificaciones
 
-### Práctica Desktop: *76/80* ###
+### Práctica Desktop: *76'00/80'00* ###
 
 +**Tarea 1 (Diseño software e implementación) :** *10'00/16'00*
 
