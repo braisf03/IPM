@@ -7,7 +7,15 @@ import gettext
 import os
 
 import locale
-locale.setlocale(locale.LC_ALL, '')
+default_locale = "en_EN"
+
+
+try:
+    locale.setlocale(locale.LC_ALL, '')
+except locale.Error as e:
+    locale.setlocale(locale.LC_ALL, default_locale)
+    print("Error al poner el idioma de tu pc:")
+
 locale.bindtextdomain("App", "locale")
 gettext.bindtextdomain("App", "locale")
 gettext.textdomain("App")

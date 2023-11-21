@@ -1,13 +1,12 @@
-# Diseño software✅✅✅
-## Diagrama estático✅✅
-### Diagrama de clases✅✅
-
+# Diseño software
+## Diagrama estático
+### Diagrama de clases
 ```mermaid
 classDiagram
     
     Presenter --> Model
-    Presenter *-- View
-    View ..> Presenter
+    Presenter --> View
+    View ..> Presenter: handler
 
     class Presenter{
     +__init__(self, view: MiAplicacion)
@@ -38,8 +37,6 @@ classDiagram
     +on_random_cocktail_clicked(self)
 }
     class View{
-    -t -> gettext
-    -run_on_main_thread -> Collable
     -CocktailDesktop.glade -> glade
     +__init__(self)
     +run(self)
@@ -85,9 +82,9 @@ classDiagram
 }
 ```
 
-## Diagramas dinámicos✅✅✅✅✅✅✅
-### Diagrama de secuencia✅✅✅✅✅✅
-### Cóctel Detalle ✅
+## Diagramas dinámicos
+### Diagrama de secuencia
+### Cóctel Detalle 
 ```mermaid
 sequenceDiagram
 
@@ -126,7 +123,7 @@ sequenceDiagram
 
 
 
-### Ingrediente Detalle ✅
+### Ingrediente Detalle 
 ```mermaid
 sequenceDiagram
 
@@ -163,7 +160,7 @@ sequenceDiagram
 
 ```
 
-### Mostrar pantalla cócteles✅
+### Mostrar pantalla cócteles
 ```mermaid
 sequenceDiagram
 
@@ -200,7 +197,7 @@ sequenceDiagram
 
     deactivate Presenter
 ```
-### Mostrar pantalla ingredientes ✅
+### Mostrar pantalla ingredientes 
 ```mermaid
 sequenceDiagram
 
@@ -240,7 +237,7 @@ sequenceDiagram
 
 ```
 
-### Buscar Ingredientes✅
+### Buscar Ingredientes
 
 ```mermaid
 sequenceDiagram
@@ -281,7 +278,7 @@ sequenceDiagram
     MiAplicacion->>MiAplicacion: Actualiza la vista
 ```
 
-### Buscar Cócteles ✅
+### Buscar Cócteles 
 ```mermaid
 sequenceDiagram
 #--------------Definiciones de actores--------------#
