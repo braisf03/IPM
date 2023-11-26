@@ -1,0 +1,40 @@
+ANÁLISIS TAREA 1 PRÁCTICA 2
+
+Antón Soto --> 3/5
+Asistí a las reuniones dónde decidimos cómo ibamos a implementar la app, colaborando en el prototipo y el diagrama de CU.
+
+Guillén Porto --> 4/5
+Asistió a las reuniones dónde decidimos cómo ibamos a implementar la app, colaborando en el prototipo y el diagrama estático y dinámico.
+
+Brais Sánchez --> 5/5
+Asistió a las reuniones dónde decidimos cómo ibamos a implementar la app, haciendo el prototipo, el diagrama de CU, el diagrama estático y dinámico.
+Además empezó a implementar la app avanzando trabajo de la tarea siguiente, en general, el que más ha trabajado de los tres de lejos.
+
+
+
+ANÁLISIS TAREA 2 PRÁCTICA 2 (2 semanas)
+
+Antón Soto --> 3/5
+Implementé el modelo de la aplicación e hice los diagramas en Mermaid, además de los cambios hechos en la interfaz de tablet. En la segunda semana
+implementamos la persistencia en los favoritos, en la cual ayudé haciendo las funciones de la clase ModeloFichero.
+
+Guillén Porto --> 4/5
+Ayudó en todos los aspectos de la práctica, ayudando en el modelo, las decisiones sobre la implementación, la interfaz, etc. Además,
+se informó sobre el patrón Provider que implementamos en la práctica y fue quien coordinó su implementación. En la segunda semana, implementó conmigo
+las funciones del ModeloFichero y implementó la correccion de errores junto con Brais.
+
+Brais Sánchez --> 5/5
+Se encargó de la implementación de las interfaces tanto en móvil como en tablet, coordinandose con Guillén para implementar correctamente el patrón. En la segunda
+semana mejoró la interfaz con las sugerencias que recogimos en la clase de prácticas y colaboró en la corrección de errores.
+
+
+ANÁLISIS TAREA 3 PRÁCTICA 2
+
+Antón Soto --> 4/5
+Implementé junto con Guillén el stub y los test de la aplicación.
+
+Guillén Porto --> 4/5
+Implementó conmigo el stub y los test de la aplicación.
+
+Brais Sánchez --> 4/5
+Se encargó de corregir los errores de la interfaz gráfica encontrados en la anterior entrega.

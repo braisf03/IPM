@@ -1,0 +1,46 @@
+Objetivos de aprendizaje de la práctica (semana 1):
+
+-Aprender a realizar diseños adaptativos
+-Aprender sobre los patrones de diseño de flutter
+
+Recursos usados (semana 1):
+
+- Documentación de Flutter (https://docs.flutter.dev/) En este enlace esta toda la información necesaria sobre widgets, clases
+y patrones de Flutter. Fueron muy útiles para determinar el patrón de diseño.
+
+- Documentación de Dart (https://pub.dev/packages/provider) En este enlace se explica el patrón provider, que es el que elegimos
+para hacer la práctica y su implementación.
+
+
+Objetivos de aprendizaje de la práctica (semana 2-3):
+
+-Uso de librerías para construir IGUs.
+-Programación dirigida por eventos
+-Uso de la concurrencia con funciones asíncronas.
+-Gestión de errores en la E/S.
+
+Recursos usados (semana 2-3):
+
+- Documentación de Flutter (https://docs.flutter.dev/) En este enlace esta toda la información necesaria sobre widgets, clases
+y patrones de Flutter. Fueron muy útiles para determinar el patrón de diseño.
+
+- Documentación de Dart (https://pub.dev/packages/provider) En este enlace se explica el patrón provider, que es el que elegimos
+para hacer la práctica y su implementación. 
+
+- La API Fcs (https://fcsapi.com/) En este enlace están todos los cambios de divisa necesarios para realizar los transformaciones
+que solicite el usuario, tanto de monedas, como las gráficas de los últimos 4 días.
+
+Objetivos de aprendizaje (semana 4):
+
+-Test2End a través de la interfaz gráfica.
+
+Recursos usados (semana 4):
+
+-Documentación de Flutter (https://docs.flutter.dev/testing/overview) En este enlace esta toda la información necesaria sobre los test,
+ fueron muy útiles para la realización de los test.
+
+- La API Fcs (https://fcsapi.com/) En este enlace están todos los cambios de divisa necesarios para realizar los transformaciones
+que solicite el usuario, tanto de monedas, como las gráficas de los últimos 4 días.
+
+- La API stub (https://github.com/nbarreira/fcs-stub/tree/main). Lo usamos para realizar peticiones a la API sin necesidad de gastar
+ peticiones. Es un servidor de prueba.

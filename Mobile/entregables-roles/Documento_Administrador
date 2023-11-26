@@ -1,0 +1,34 @@
+DOCUMENTO ADMINISTRADOR
+Semana 1:
+
+Duante esta semana, no solo hicimos los prototipos y el diseño software, sino que también comenzamos a implementar la aplicación,
+haciendo ya el código de la interfaz. Antón se encargó de decidir el diseño de la interfaz gráfica, mientras que Brais se encargó
+de comenzar el código y ayudar en el diseño. Yo (Guillén) ayudé con el diseño de la interfaz y con el diseño software. Todos nosotros
+intentamos investigar sobre el patrón de diseño a utilizar (provider).
+
+
+
+Semana 2:
+Durante esta semana, nos encargamos de hacer la base de la aplicación, sin parte de la gestión de errores y sin que la pantalla
+se adapte a la orientación y dispositivo. Brais se encargó de la mayor parte de la interfaz gráfica, mientras que Antón y yo implementamos
+el modelo, nos encargamos de que la aplicación cumpliese el patrón provider e hicimos los diagramas de clases y dinámicos. Aparte de eso,
+comenzamos a implementar la persistencia. Al intentar subir nuestro trabajo a GitHub, tuvimos varios problemas con las ramas que nos obligaron
+a borrar todo el contenido del repositorio y que solo lo subiese uno de nosotros. A partir de ese moomento, Brais se encargó de commitear
+todos los cambios en el código. Probablemente el problema de ramas fuese por hacer todo en Code With Me e intentar que cada uno subiese una
+parte de ese código.
+
+
+Semana 3:
+Durante esta semana, acabamos de implementar la aplicación, aparte de añadirle persistencia. Brais se encargó de hacer que la aplicación
+se adaptase a la orientación de dispositivo, lo que supuso una reorganización general del código. Yo ayudé a hacer esta tarea y acabé, junto
+con Antón, la implementación de la clase ModeloFichero, encargada de la persistencia. Antón y yo también añadimos algunas cosas al modelo
+necesarias para acabar la gestión de errores. Finalmente, Antón se encargó de actualizar el documento diseño_iu y yo de actualizar el
+diseño_sw.
+
+
+
+Semana 4:
+Durante esta semana, Brais se encargó de corregir los errores en la interfaz, tanto el de que no se mantuviese la tab al girar la pantalla
+como que la interfaz diese fallos en ciertos tamaños de pantalla. Antón y yo nos encargamos de informarnos sobre los tests e intentar 
+implementarlos. Para esto, utilizamos como stub el del GitHub que se nos proporcionó por teams haciéndole algunas modificaciones que
+vimos necesarias a su código para que funcionase con todas las funcionalidades de nuestra app. 
