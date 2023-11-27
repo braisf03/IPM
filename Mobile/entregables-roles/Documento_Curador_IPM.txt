@@ -30,6 +30,7 @@ para hacer la práctica y su implementación.
 - La API Fcs (https://fcsapi.com/) En este enlace están todos los cambios de divisa necesarios para realizar los transformaciones
 que solicite el usuario, tanto de monedas, como las gráficas de los últimos 4 días.
 
+
 Objetivos de aprendizaje (semana 4):
 
 -Test2End a través de la interfaz gráfica.
