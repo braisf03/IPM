@@ -12,7 +12,7 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 +**Tarea 3 (Internacionalización) :** *15'00/16'00*
 
-### Práctica Mobile: *NaN* ###
+### Práctica Mobile: *78'00/80'00* ###
 
 +**Tarea 4 (Diseño de la interfaz) :** *8'00/16'00*
 
