@@ -20,10 +20,10 @@ Prácticas Interfaces Persona Máquina (curso 2023/24)
 
 +**Tarea 6 (Test end2end) :** *16'00/16'00*
 
-### Práctica Web: *NaN* ###
+### Práctica Web: *80'00/80'00* ###
 
-+**Tarea 7 (Implementar la interfaz) :** *NaN*
++**Tarea 7 (Implementar la interfaz) :** *16'00/16'00*
 
-+**Tarea 8 (Diseño adaptativo) :** *NaN*
++**Tarea 8 (Diseño adaptativo) :** *16'00/16'00*
 
-+**Tarea 9 (WAI-ARIA) :** *NaN*
++**Tarea 9 (WAI-ARIA) :** *16'00/16'00*
