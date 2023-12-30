@@ -1,6 +1,7 @@
 # Diseño software
 ## Diagrama estático
 
+
 ```mermaid
 classDiagram
 
