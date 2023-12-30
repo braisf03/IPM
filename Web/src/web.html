@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Lista personal para apuntar tareas">
+        <meta name="keywords" content="To do list">
+        <title>To do List Web</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+        <header role="banner">
+            <h1 id="appName">To-Do List <img id="icon" src="images/icon.png"></h2>
+        </header>
+        <main role="main" id = "appBody">
+            <section role="toolbar" id = "buttonSection" class="buttons">
+                <button id = "addTaskButton" class = "addButton" role = "button" aria-label = "add"> Add task</button>
+                <button id = "markAllButton" role = "button" aria-label = "mark all">Mark All <i class="fa fa-check" style="color:white"></i></button>
+                <button id = "deleteAllMarkedButton" role = "button" aria-label = "deleteCompleted"> Delete Marked <i class="fa fa-trash-o" style="color:rgb(0, 0, 0)"></i></button>
+                <section class = "filter">
+                    <label id = "filterLabel">  Show: </label>
+                    <select id="taskFilter" role="listbox" aria-haspopup="listbox">
+                        <option value="all" role = "option">All Tasks</option>
+                        <option value="completed" role = "option">Completed Tasks</option>
+                        <option value="active" role = "option">Active Tasks</option>
+                    </select>
+                </section>
+            </section>
+            <form role="form" id="taskForm">
+                <button id="closeFormButton" role = "button" aria-label = "close form">&#10006</button>
+    
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" required role="textbox" id="taskTitle" maxlength="20" aria-describedby = "titleError">
+                <p id = "titleError"> The title cannot be empty</p>
+    
+                <label for="longDescription">Long Description (Optional):</label>
+                <textarea name="Long Description" role="textbox" id="longDescription" cols="30" rows="6" maxlength="200"></textarea>
+    
+                <label for="dueDate">Due Date (Optional):</label>
+                <input type="datetime-local" id ="dueDate">
+    
+                <button id="submitFormButton" type = "submit" class = "addButton" role = "button">Add</button>
+    
+            </form>
+            <ul role="list" id = "list-container" class = "scrollable"></ul>
+        </main>
+    
+
+        <script src="script.js"></script>
+    </body>
+</html>

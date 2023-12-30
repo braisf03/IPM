@@ -1,0 +1,24 @@
+Documento administrador
+
+Semana 1:
+
+Durante esta semana realizamos el diseño de la interfaz de la aplicacion en Html y Css.Tanto Guillén,
+como Antón y yo (Brais) colaboramos activamente los 3 en el desarrollo conjunto de ésta. Además realizamos
+una gran parte de la implementación del fichero Javascript, realizando las funciones que permiten navegar
+por el menú y la implementación de las tareas. Gracias a esto adelantamos una gran cantidad de trabajo 
+para las siguientes entregas de la práctica.
+
+Semana 2:
+
+Durante esta semana realizamos la implementación del diseño adaptativo de la aplicación en todos los 
+dispositivos. Tanto Guillén como Antón y yo realizamos los cambios necesarios dentro de cada uno de 
+los ficheros en cojunto en CodeWithMe. También ralizamos cambios en el diseño para que fuera más
+interactivo con el usuario. Tuvimos algún problema de reescalabilidad pero los solucionamos de 
+manera eficiente.
+
+Semana 3:
+
+En esta semana ya teníamos la mayor parte del trabajo hecho, ya que durante la 1ª y 2ª semana, hicimos
+también la implementación a medida que ibamos realizando la interfaz y la adaptabilidad. Por lo que solo
+necesitabamos realizar la parte necesaria del javascript para que funcionase bien. Además hicimos un par
+de cambios en el Html para que se adaptase a la interfaz que teníamos hecha en un principio.

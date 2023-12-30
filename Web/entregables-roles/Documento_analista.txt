@@ -1,0 +1,47 @@
+TAREA 1 PRÁCTICA 3 (2 semanas)
+
+Antón Soto --> 4/5
+Implementó las funcionalidades de marcar todas las tareas como completadas y borrar todas las completadas, creando botones para ellas.
+Implementó las funcionalidades para ver las tareas completadas y activas. Creó el diseño-ui y lo actualizó paraque se correspondiese
+con nuestra interfaz final. 
+
+Brais Sánchez --> 4/5
+Implementó el esqueleto de la aplicación en html y el comienzo de funcionalidades como insertar, borrar y marcar tarea como completada.
+Ayudó con la implementación de marcar todas las tareas como completadas y borrar todas las completadas. Se encargó de una buena parte del
+CSS.
+
+Guillén Porto --> 4/5
+Implementé la lógica de la funcionalidad de insertar tarea, junto con la pantalla del formulario, aparte de hacer que el formato de cada
+elemento de la lista se adapte en caso de que tenga fecha límite o descripción larga. Creé un botón que unificaba las funcionalidades
+de ver tareas completadas y activas. Ayudé con el diseño-ui inicial y el CSS.
+
+
+
+
+
+TAREA 2 PRÁCTICA 3
+
+Antón Soto --> 4/5
+Se encargó de plantear y representar el nuevo diseño y ayudó a modificar el código para que se adaptase a él.
+
+Brais Sánchez --> 4/5
+Se encargó de parte del cambio del CSS e hizo ciertas modificaciones al html y al javascript para facilitar los cambios al diseño.
+
+Guillén Porto --> 5/5
+Realicé cambios a las funcionalidades de la aplicación, tanto relacionados con su funcionamiento correcto como con su presentación, e
+hice parte de los cambios necesarios al CSS.
+
+
+
+
+
+TAREA 3 PRÁCTCA 3
+
+Antón Soto --> 5/5
+Se encargó de buscar una buena cantidad de la información y ayudó a poner aria-labels y roles a los widgets y secciones en el html
+
+Brais Sánchez --> 4/5
+Ayudó con los cambios necesarios al html y al javascript para hacer la web más accesible
+
+Guillén Porto --> 5/5
+Cambié el funcionamiento del formulario para que fuese más fácil hacerlo accesible e investigué sobre algunos atributos aria.

@@ -1,0 +1,41 @@
+Objetivos de aprendizaje de la practica (semana 1):
+
+-Aprender el lenguaje de diseño web HTML y organizar el esqueleto de una página
+-Aprender el lenguaje de diseño web CSS
+-Nuestro grupo, a mayores, ha implementado los casos de uso en JavaScript, el lenguaje más utilizado para el backend de las páginas web
+
+Recursos usados (semana 1):
+
+-Documentación de W3Schools (https://www.w3schools.com/). En este enlace, se puede encontrar mucha información acerca de HTML; tanto sus
+funcionalidades y usos como sus limitaciones, guiandonos así mucho en los inicios de la creación de la práctica, además, se puede encontrar información
+sobre CSS y JavaScript, que también nos ayudó a la hora de implementar los casos de uso y el estilo de la página. En ella, encontramos tutoriales como Collapsible o
+To Do List que nos sirvieron como referencia.
+
+
+Objetivos de aprendizaje de la practica (semana 2):
+
+-Aprender a adaptar la página web a través del lenguaje CSS
+
+Recursos usados (semana 2):
+
+-Documentación de W3Schools (https://www.w3schools.com/html/html_responsive.asp). Al igual que en la entrega anterior, esta página fue nuestra fuente 
+principal de información y obtuvimos muchos conocimientos a través de ella, en concreto, en el apartado de media queries (https://www.w3schools.com/css/css_rwd_mediaqueries.asp).
+-Apuntes del Campus Virtual: Hemos usado los apuntes del campus virtual para mejorar la adaptabilidad con porcentajes y unidades de medida escalables
+distintas al pixel como el "em" y el "vw".
+
+
+Objetivos de aprendizaje de la practica (semana 3):
+
+- Aprender a añadir elementos a nuestra web para que sea accesible y cumpla con la normativa WAI-ARIA
+- Aprender a hacer la página funcional a través de JavaScript (nuestro grupo adelantó ese punto en la semana 1)
+
+Recursos usados (semana 3):
+
+-Documentación de W3Schools (https://www.w3schools.com/accessibility/). De este enlace, obtuvimos ideas y ejemplos de código que nos sirvieron de ayuda
+para empezar a implementar los elementos de accesibilidad que se muestran en los apuntes de WAI-ARIA.
+-Apuntes del Campus Virtual: Por segunda vez en esta práctica, hemos usado los apuntes del campus virtual para adquirir conocimientos básicos antes
+de leer la documentación oficial de WAI-ARIA. Esto nos facilitó mucho el trabajo debido a que su página en un inicio es un poco abrumante y está sobrecargada con información.
+-Documentación de WAI-ARIA (https://www.w3.org/WAI/standards-guidelines/aria/). En esta página, consultamos los standares para saber que tiene que tener
+una web para que sea accesible, además, exploramos las distintas normativas o funcionalidades para distintos widgets 
+(P.Ej: El botón. https://www.w3.org/WAI/ARIA/apg/patterns/button/) o miramos los disitntos tipos de roles o atributos que pueden llegar a tener distintas
+partes del HTML (https://www.w3.org/TR/wai-aria-1.2/#roles_categorization).
